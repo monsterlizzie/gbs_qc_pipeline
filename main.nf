@@ -12,13 +12,13 @@ process INIT_DB_DIR {
     label 'bash_container'
     label 'farm_local'
     publishDir "${params.db}"
-   
+    
 
     output:
     val "${params.db}", emit: db_dir
-    path "do_not_modify", emit:dummy
+    path "do_not_modify", emit: dummy
 
-
+    
     script:
     """
     mkdir do_not_modify
